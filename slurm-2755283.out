@@ -1,0 +1,575 @@
+/bin/rm -f CrunchTope *.o *.mod *~
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o crunchtype.o crunchtype.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o params.o params.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o strings.o strings.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o io.o io.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o concentration.o concentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o mineral.o mineral.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o transport.o transport.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o medium.o medium.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o modflowModule.o modflowModule.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ReadFlow.o ReadFlow.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o RunTime.o RunTime.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o solver.o solver.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o temperature.o temperature.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o flow.o flow.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o crunch_interface.o crunch_interface.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchFunctions.o CrunchFunctions.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o isotope.o isotope.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o NanoCrystal.o NanoCrystal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchTopeDriver.o CrunchTopeDriver.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchTope.o CrunchTope.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AffinityNumerical.o AffinityNumerical.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AllocateALL.o AllocateALL.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AllocateOS3D.o AllocateOS3D.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AllocateGasesGimrt.o AllocateGasesGimrt.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AllocateGasesOS3D.o AllocateGasesOS3D.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AllocateGIMRT.o AllocateGIMRT.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AqueousFluxInitialize.o AqueousFluxInitialize.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AqueousFluxWrite.o AqueousFluxWrite.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AqueousToBulkConvert.o AqueousToBulkConvert.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AssembleLocal.o AssembleLocal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AssembleGlobal.o AssembleGlobal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o AverageRo.o AverageRo.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bd_diffuse.o bd_diffuse.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bd_diffuse_by_grid.o bd_diffuse_by_grid.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdcalc.o bdcalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdexchange.o bdexchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdgas.o bdgas.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdgas_by_grid.o bdgas_by_grid.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdrecalc.o bdrecalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdrecalc_by_grid.o bdrecalc_by_grid.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o bdsurf.o bdsurf.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o breakfind.o breakfind.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o BreakFindPlusCount.o BreakFindPlusCount.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o BreakthroughInitialize.o BreakthroughInitialize.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o BreakthroughWrite.o BreakthroughWrite.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CalciteBulkStoichiometry.o CalciteBulkStoichiometry.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CalciteStoichiometry.o CalciteStoichiometry.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CalciteStoichiometryBoundary.o CalciteStoichiometryBoundary.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CalculateDHAD.o CalculateDHAD.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CalculateTortuosity.o CalculateTortuosity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeff.o coeff.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeff_D.o coeff_D.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffCylinder.o coeffCylinder.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffCylinder_D.o coeffCylinder_D.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffCylinderDiffuse.o coeffCylinderDiffuse.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffCylinderNUFT.o coeffCylinderNUFT.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffDiffuse.o coeffDiffuse.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffNuft.o coeffNuft.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffSphericalNew.o coeffSphericalNew.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o coeffSphericalNew_d.o coeffSphericalNew_d.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o convan.o convan.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CourantStep.o CourantStep.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CourantStepAlt.o CourantStepAlt.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CPUdefinition.o CPUdefinition.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchPETScFinalizeSolver.o CrunchPETScFinalizeSolver.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchPETScInitializeChemistry.o CrunchPETScInitializeChemistry.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchPETScInitializeDiffusion.o CrunchPETScInitializeDiffusion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchPETScInitializePressure.o CrunchPETScInitializePressure.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o CrunchPETScTolerances.o CrunchPETScTolerances.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o database.o database.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o decay.o decay.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o decbt90.o decbt90.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o density.o density.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o dispersivity.o dispersivity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o duan.o duan.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o equilib_co2.o equilib_co2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o erosion.o erosion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ex_activity.o ex_activity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o exactivity_init.o exactivity_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o exchange.o exchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o exchange_init.o exchange_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ExchangeConcentration.o ExchangeConcentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o find_condition.o find_condition.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o find_firststring.o find_firststring.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o find_string.o find_string.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FindMaxFlow.o FindMaxFlow.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FirstAllocation.o FirstAllocation.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o fit.o fit.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o fitgamma.o fitgamma.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FluxWeightedConcentrationInitialize.o FluxWeightedConcentrationInitialize.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FluxWeightedConcentrationWrite.o FluxWeightedConcentrationWrite.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FormatForNameList.o FormatForNameList.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FxTopeGlobal.o FxTopeGlobal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o FxTopeLocal.o FxTopeLocal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gamma_co2.o gamma_co2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gamma.o gamma.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gamma_init_co2.o gamma_init_co2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gamma_init.o gamma_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gamma_local.o gamma_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gascoeffCylinder.o gascoeffCylinder.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gasdiff.o gasdiff.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gases.o gases.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gases_init_co2.o gases_init_co2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o gases_init.o gases_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GasInjection.o GasInjection.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GetMineralNumber.o GetMineralNumber.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GasPartialPressure.o GasPartialPressure.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GasPartialPressure_Init.o GasPartialPressure_Init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GetPrimarySpeciesNumber.o GetPrimarySpeciesNumber.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GhostCells.o GhostCells.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GIMRTCrunchPETScTolerances.o GIMRTCrunchPETScTolerances.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GlobalArrayAllocation.o GlobalArrayAllocation.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GlobalDensity.o GlobalDensity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o graphics3d.o graphics3d.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GraphicsKaleidagraph.o GraphicsKaleidagraph.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GraphicsTecplot.o GraphicsTecplot.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o GraphicsVisit.o GraphicsVisit.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o harmonic.o harmonic.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o InitializeCalciteStoichiometry.o InitializeCalciteStoichiometry.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o isotope-read_series.o isotope-read_series.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o IsotopeBreakthroughInitialize.o IsotopeBreakthroughInitialize.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o IsotopeBreakthroughWrite.o IsotopeBreakthroughWrite.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jac_exchange.o jac_exchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jac_exchange_local.o jac_exchange_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jac_local.o jac_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacexchange.o jacexchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacexchange_init.o jacexchange_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacgas.o jacgas.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacgas_local.o jacgas_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacminTope.o jacminTope.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacobian.o jacobian.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacobian_init.o jacobian_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacobian_plus.o jacobian_plus.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacpotential.o jacpotential.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o JacPotentialLocal.o JacPotentialLocal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacrkin.o jacrkin.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacsurf.o jacsurf.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacsurf_init.o jacsurf_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o jacsurf_local.o jacsurf_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o keqcalc2.o keqcalc2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o keqcalc2_init_co2.o keqcalc2_init_co2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o keqcalc2_init.o keqcalc2_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o keqcalcGasOnly.o keqcalcGasOnly.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o lubksb90.o lubksb90.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ludcmp90.o ludcmp90.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o majuscules.o majuscules.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o mindecay.o mindecay.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o mineralfind.o mineralfind.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o mineral_update.o mineral_update.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o modread.o modread.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ModScan.o ModScan.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o movie.o movie.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o newfile.o newfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o nrerror.o nrerror.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o NviewInit.o NviewInit.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o NviewOutput.o NviewOutput.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o oldcon.o oldcon.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o oldcongas.o oldcongas.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o oldkd.o oldkd.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o oldsurf.o oldsurf.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o oldsurface.o oldsurface.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o os3d_newton.o os3d_newton.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o PauseFor.o PauseFor.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o PestExchange.o PestExchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o PestSurface.o PestSurface.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o PestScaleOutput.o PestScaleOutput.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o porcalc.o porcalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o porperm.o porperm.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o Pressure.o Pressure.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o PrimarySpeciesCheck.o PrimarySpeciesCheck.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ratecheck.o ratecheck.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o reactionTope.o reactionTope.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o reactkin.o reactkin.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read98.o read98.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_AqueousFluxSeries.o read_AqueousFluxSeries.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_BoundaryConditionsByZone.o read_BoundaryConditionsByZone.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_bound.o read_bound.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_burialfile.o read_burialfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_CatabolicPath.o read_CatabolicPath.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_concentration.o read_concentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_condition.o read_condition.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_constantflow.o read_constantflow.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_constantgasflow.o read_constantgasflow.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_ConstantTortuosity.o read_ConstantTortuosity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_coordinates.o read_coordinates.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_dbs.o read_dbs.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_decay.o read_decay.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_diffusion.o read_diffusion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_dispersion.o read_dispersion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_equil.o read_equil.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_erosion.o read_erosion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_exchange.o read_exchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readFileName.o readFileName.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_flowfile.o read_flowfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_FluxWeightedConcentration.o read_FluxWeightedConcentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_gasdiffusion.o read_gasdiffusion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_gasflowfile.o read_gasflowfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_gaspump.o read_gaspump.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_graphics.o read_graphics.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_gravity.o read_gravity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_het.o read_het.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_infiltration.o read_infiltration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_integer.o read_integer.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_ionexchangeBS.o read_ionexchangeBS.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_ionexchangeMIN.o read_ionexchangeMIN.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_Isotopes.o read_Isotopes.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_Kd.o read_Kd.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_kinetics_Bio.o read_kinetics_Bio.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_logical.o read_logical.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_master.o read_master.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_mineral.o read_mineral.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_minkin.o read_minkin.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_MODFLOWfile.o read_MODFLOWfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_multpar.o read_multpar.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_multstring.o read_multstring.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_nuft.o read_nuft.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_par.o read_par.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_permfile.o read_permfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_permx.o read_permx.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_permy.o read_permy.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_permz.o read_permz.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_pH.o read_pH.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_porosity.o read_porosity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_pressureAlternative.o read_pressureAlternative.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_pump.o read_pump.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_restart.o read_restart.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_series.o read_series.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_snapshot.o read_snapshot.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_SolidDensity.o read_SolidDensity.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_speciesdiffusion.o read_speciesdiffusion.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_steady.o read_steady.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_string.o read_string.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_surface.o read_surface.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_surfacecomplex.o read_surfacecomplex.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_temp.o read_temp.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_temperature.o read_temperature.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_title.o read_title.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_toperatio.o read_toperatio.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_tortuosityfile.o read_tortuosityfile.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o read_TortuosityByZone.o read_TortuosityByZone.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readblock.o readblock.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readbreak.o readbreak.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readCaseSensitive.o readCaseSensitive.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readCaseSensitivePar.o readCaseSensitivePar.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ReadFileNameOnly.o ReadFileNameOnly.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ReadFlowField.o ReadFlowField.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readModFlowParameters.o readModFlowParameters.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readModFlowStress.o readModFlowStress.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readRecharge.o readRecharge.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o ReadSaturation.o ReadSaturation.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readSingleString.o readSingleString.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readtype1.o readtype1.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readtype2.o readtype2.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readtype3.o readtype3.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o readtypescan1.o readtypescan1.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o reallocate.o reallocate.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o restart.o restart.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o rocalc.o rocalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o satcalc.o satcalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o solbt90.o solbt90.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SolveDiffuse.o SolveDiffuse.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SolveDiffuseSpherical.o SolveDiffuseSpherical.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SolveGasDiffuse.o SolveGasDiffuse.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o speciation.o speciation.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o species.o species.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o species_init.o species_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SpeciesLocal.o SpeciesLocal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o squeeze.o squeeze.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o sschaine.o sschaine.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o sschaine_hyph.o sschaine_hyph.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o StartTope.o StartTope.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SteadyState.o SteadyState.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o stringlen.o stringlen.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o stringtype.o stringtype.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SurfaceComplex.o SurfaceComplex.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o surf_init.o surf_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SurfaceCharge.o SurfaceCharge.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SurfaceCharge_init.o SurfaceCharge_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SurfaceConcentration.o SurfaceConcentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o SurfLocal.o SurfLocal.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o swap.o swap.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o timestep.o timestep.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o tot_ex.o tot_ex.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totconc.o totconc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totconc_init.o totconc_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totconc_plus.o totconc_plus.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totexchange.o totexchange.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totexchange_init.o totexchange_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totexchange_local.o totexchange_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totgas.o totgas.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totgas_init.o totgas_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totsurf.o totsurf.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totsurf_init.o totsurf_init.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o totsurf_local.o totsurf_local.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o tridag_ser.o tridag_ser.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o tvd.o tvd.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o tvdNuft.o tvdNuft.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o units_concentration.o units_concentration.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o units_distance.o units_distance.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o units_time.o units_time.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o units_timeOutput.o units_timeOutput.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o UpdateExchanger.o UpdateExchanger.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o velocalc.o velocalc.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o WaterReacted.o WaterReacted.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o WaterReactedNodeByNode.o WaterReactedNodeByNode.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o xmass.o xmass.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o xmassNodeByNode.o xmassNodeByNode.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o xtoolInit.o xtoolInit.F90
+ifort -c -fPIC -O3   -w -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include -I/sw/petsc-3.6.1-intel-12.1.4/include/petsc/mpiuni    -o xtoolOutput.o xtoolOutput.F90
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The version of PETSc you are using is out-of-date, we recommend updating to the new release
+ Available Version: 3.9.3   Installed Version: 3.6.1
+http://www.mcs.anl.gov/petsc/download/index.html
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ifort -fPIC -O3  -w -o CrunchTope crunchtype.o params.o strings.o io.o concentration.o mineral.o transport.o medium.o modflowModule.o ReadFlow.o RunTime.o solver.o temperature.o flow.o crunch_interface.o CrunchFunctions.o isotope.o NanoCrystal.o CrunchTopeDriver.o CrunchTope.o AffinityNumerical.o AllocateALL.o AllocateOS3D.o AllocateGasesGimrt.o AllocateGasesOS3D.o AllocateGIMRT.o AqueousFluxInitialize.o AqueousFluxWrite.o AqueousToBulkConvert.o AssembleLocal.o AssembleGlobal.o AverageRo.o bd_diffuse.o bd_diffuse_by_grid.o bdcalc.o bdexchange.o bdgas.o bdgas_by_grid.o bdrecalc.o bdrecalc_by_grid.o bdsurf.o breakfind.o BreakFindPlusCount.o BreakthroughInitialize.o BreakthroughWrite.o CalciteBulkStoichiometry.o CalciteStoichiometry.o CalciteStoichiometryBoundary.o CalculateDHAD.o CalculateTortuosity.o coeff.o coeff_D.o coeffCylinder.o coeffCylinder_D.o coeffCylinderDiffuse.o coeffCylinderNUFT.o coeffDiffuse.o coeffNuft.o coeffSphericalNew.o coeffSphericalNew_d.o convan.o CourantStep.o CourantStepAlt.o CPUdefinition.o CrunchPETScFinalizeSolver.o CrunchPETScInitializeChemistry.o CrunchPETScInitializeDiffusion.o CrunchPETScInitializePressure.o CrunchPETScTolerances.o database.o decay.o decbt90.o density.o dispersivity.o duan.o equilib_co2.o erosion.o ex_activity.o exactivity_init.o exchange.o exchange_init.o ExchangeConcentration.o find_condition.o find_firststring.o find_string.o FindMaxFlow.o FirstAllocation.o fit.o fitgamma.o FluxWeightedConcentrationInitialize.o FluxWeightedConcentrationWrite.o FormatForNameList.o FxTopeGlobal.o FxTopeLocal.o gamma_co2.o gamma.o gamma_init_co2.o gamma_init.o gamma_local.o gascoeffCylinder.o gasdiff.o gases.o gases_init_co2.o gases_init.o GasInjection.o GetMineralNumber.o GasPartialPressure.o GasPartialPressure_Init.o GetPrimarySpeciesNumber.o GhostCells.o GIMRTCrunchPETScTolerances.o GlobalArrayAllocation.o GlobalDensity.o graphics3d.o GraphicsKaleidagraph.o GraphicsTecplot.o GraphicsVisit.o harmonic.o InitializeCalciteStoichiometry.o isotope-read_series.o IsotopeBreakthroughInitialize.o IsotopeBreakthroughWrite.o jac_exchange.o jac_exchange_local.o jac_local.o jacexchange.o jacexchange_init.o jacgas.o jacgas_local.o jacminTope.o jacobian.o jacobian_init.o jacobian_plus.o jacpotential.o JacPotentialLocal.o jacrkin.o jacsurf.o jacsurf_init.o jacsurf_local.o keqcalc2.o keqcalc2_init_co2.o keqcalc2_init.o keqcalcGasOnly.o lubksb90.o ludcmp90.o majuscules.o mindecay.o mineralfind.o mineral_update.o modread.o ModScan.o movie.o newfile.o nrerror.o NviewInit.o NviewOutput.o oldcon.o oldcongas.o oldkd.o oldsurf.o oldsurface.o os3d_newton.o PauseFor.o PestExchange.o PestSurface.o PestScaleOutput.o porcalc.o porperm.o Pressure.o PrimarySpeciesCheck.o ratecheck.o reactionTope.o reactkin.o read98.o read_AqueousFluxSeries.o read_BoundaryConditionsByZone.o read_bound.o read_burialfile.o read_CatabolicPath.o read_concentration.o read_condition.o read_constantflow.o read_constantgasflow.o read_ConstantTortuosity.o read_coordinates.o read_dbs.o read_decay.o read_diffusion.o read_dispersion.o read_equil.o read_erosion.o read_exchange.o readFileName.o read_flowfile.o read_FluxWeightedConcentration.o read_gasdiffusion.o read_gasflowfile.o read_gaspump.o read_graphics.o read_gravity.o read_het.o read_infiltration.o read_integer.o read_ionexchangeBS.o read_ionexchangeMIN.o read_Isotopes.o read_Kd.o read_kinetics_Bio.o read_logical.o read_master.o read_mineral.o read_minkin.o read_MODFLOWfile.o read_multpar.o read_multstring.o read_nuft.o read_par.o read_permfile.o read_permx.o read_permy.o read_permz.o read_pH.o read_porosity.o read_pressureAlternative.o read_pump.o read_restart.o read_series.o read_snapshot.o read_SolidDensity.o read_speciesdiffusion.o read_steady.o read_string.o read_surface.o read_surfacecomplex.o read_temp.o read_temperature.o read_title.o read_toperatio.o read_tortuosityfile.o read_TortuosityByZone.o readblock.o readbreak.o readCaseSensitive.o readCaseSensitivePar.o ReadFileNameOnly.o ReadFlowField.o readModFlowParameters.o readModFlowStress.o readRecharge.o ReadSaturation.o readSingleString.o readtype1.o readtype2.o readtype3.o readtypescan1.o reallocate.o restart.o rocalc.o satcalc.o solbt90.o SolveDiffuse.o SolveDiffuseSpherical.o SolveGasDiffuse.o speciation.o species.o species_init.o SpeciesLocal.o squeeze.o sschaine.o sschaine_hyph.o StartTope.o SteadyState.o stringlen.o stringtype.o SurfaceComplex.o surf_init.o SurfaceCharge.o SurfaceCharge_init.o SurfaceConcentration.o SurfLocal.o swap.o timestep.o tot_ex.o totconc.o totconc_init.o totconc_plus.o totexchange.o totexchange_init.o totexchange_local.o totgas.o totgas_init.o totsurf.o totsurf_init.o totsurf_local.o tridag_ser.o tvd.o tvdNuft.o units_concentration.o units_distance.o units_time.o units_timeOutput.o UpdateExchanger.o velocalc.o WaterReacted.o WaterReactedNodeByNode.o xmass.o xmassNodeByNode.o xtoolInit.o xtoolOutput.o  -Wl,-rpath,/sw/petsc-3.6.1-intel-12.1.4/lib -L/sw/petsc-3.6.1-intel-12.1.4/lib  -lpetsc -llapack -lblas -lssl -lcrypto -Wl,-rpath,/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -L/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -lifport -lifcore -lm -lpthread -lm -ldl -Wl,-rpath,/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -L/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -limf -lsvml -lipgo -ldecimal -lcilkrts -lstdc++ -lgcc_s -lirc -lirc_s -Wl,-rpath,/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -L/sw/intel/composer_xe_2011_sp1.10.319/composer_xe_2011_sp1.10.319/compiler/lib/intel64 -Wl,-rpath,/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -L/usr/lib/gcc/x86_64-redhat-linux/4.4.7 -ldl  -w
+ 
+  Title of simulation: 
+ CO2_respiration.in: CO2 respiration at different soil moisture          
+ 
+ 
+  --> Running in GIMRT mode (global implicit reaction and transport) 
+ 
+  Extended Debye-Huckel activity model
+ 
+   ---> Using database: datacom.dbs                                                                                         
+  Temperature parameters not found
+  Using defaults
+ 
+  Number of components:                          8
+ 
+  Number of secondary species:                   4
+ 
+  Number of gases:                               2
+ 
+  Number of kinetic minerals:                    4
+ 
+  No surface complexation block found
+ 
+     --> Calling database subroutine
+ 
+ 
+  Number of reactions:                             10
+  Number of complexes:                              4
+  Number of minerals:                               4
+  Number of gases:                                  2
+ 
+     --> Finished reading database
+  No ion exchange block found
+  Fixing porosity at  0.4000
+  No update of porosity
+ 
+  Current density module: temperature
+ 
+ 
+  ---> READING GEOCHEMICAL CONDITIONS  
+ 
+ 
+  ---> STARTING SPECIATION OF GEOCHEMICAL CONDITIONS  
+ 
+ 
+                SPECIATION OF 
+      INITIAL AND BOUNDARY CONDITIONS 
+           SUCCESSFULLY COMPLETED
+ 
+  Aqueous kinetics block found
+ multipliers for reaction 
+ Microbe_uptake_fast_fast                                                       
+                                                       add up to: 
+   1.00000000000000     
+ Using Monod rate formulation for reaction: Microbe_uptake_
+ multipliers for reaction 
+ Mortality_all                                                                  
+                                                       add up to: 
+   1.00000000000000     
+ Using TST rate formulation for reaction: Mortality_all  
+ multipliers for reaction 
+ Microbe_sleep_fast                                                             
+                                                       add up to: 
+   1.00000000000000     
+ Using irreversible rate formulation for reaction: Microbe_sleep_f
+ multipliers for reaction 
+ Microbe_awake_fast                                                             
+                                                       add up to: 
+   1.00000000000000     
+ Using irreversible rate formulation for reaction: Microbe_awake_f
+  Retardation parameters not found
+  Assuming NO retardation (Kd = 0) 
+  Z discretization
+ 
+   NZ =            1
+ 
+ 
+  Number of heterogeneities =            3
+ 
+ 
+  Running as an unsaturated problem
+ 
+  Boundary condition block found
+ 
+  X = 0 boundary condition found
+ 
+ 
+  X = NX boundary condition found
+ 
+  Output block found
+ 
+  Timestepping on--output files written
+   1.00000000000000     
+   2.00000000000000     
+   3.00000000000000     
+   4.00000000000000     
+   5.00000000000000     
+   10.0000000000000     
+   15.0000000000000     
+   20.0000000000000     
+   25.0000000000000     
+ 
+ 
+ Parameters for this run:
+ 
+ --> Porosity set by "fix_porosity" or "set_porosity" keywords
+ ----> No update of porosity
+ --> Extended Debye-Huckel activity model used
+ --> Activity coefficients only computed
+     at beginning of time step 
+  Reading MODFLOW block
+  Reading flow block
+  Flow block found
+ 
+  Constant flow specified
+ 
+ 
+  Constant gas flow specified
+ 
+ 
+   Constant velocities have been specified
+ 
+   X Darcy velocity =   0.000000000000000E+000
+   Y Darcy velocity =   0.000000000000000E+000
+   Z Darcy velocity =   0.000000000000000E+000
+ 
+ 
+   Constant gas velocities have been specified
+ 
+   X gas flux  =   0.000000000000000E+000
+   Y gas flux  =   0.000000000000000E+000
+   Z gas flux  =   0.000000000000000E+000
+ 
+ 
+ 
+ 
+  Transport block found
+ 
+ 
+   Using constant diffusion coefficient
+  Diffusion coefficient (m**2/yr) =       0.0000E+00
+ 
+ 
+  Longitudinal dispersivity (m) =     0.0000E+00
+  Transverse dispersivity (m) =       0.0000E+00
+ 
+ 
+         INITIALIZATION COMPLETED 
+          STARTING TIMESTEPPING 
+ 
+ 
+  ---> RUNNING IN:  GLOBAL IMPLICIT REACTION AND TRANSPORT (GIMRT) MODE
+ 
+ 
+  Grid cells in X direction (NX):          121
+  Grid cells in Y direction (NY):            1
+  Grid cells in Z direction (NZ):            1
+ 
+ 
+  Initial aqueous mass in system =   6.785842951831473E-006
+ 
+  Adjusting time step to match output file
+  ---> New time step =  9.7300E-02
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  1.000E+00
+   File number  =            1
+ 
+  Adjusting time step to match output file
+  ---> New time step =  1.0000E-01
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  2.000E+00
+   File number  =            2
+ 
+  Adjusting time step to match output file
+  ---> New time step =  6.3317E-16
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  3.000E+00
+   File number  =            3
+ 
+  Adjusting time step to match output file
+  ---> New time step =  2.1777E-02
+ 
+ Time step #          100
+  Time (days) =  4.00000E+00  Delt (days) = 2.178E-02
+  Number of Newton iterations =  2
+  Maximum change in master variable =   2.50E-05   at grid pts  121    1    1
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  4.000E+00
+   File number  =            4
+ 
+  Adjusting time step to match output file
+  ---> New time step =  6.9336E-02
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  5.000E+00
+   File number  =            5
+ 
+  Adjusting time step to match output file
+  ---> New time step =  1.0000E-01
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  1.000E+01
+   File number  =            6
+ 
+ Time step #          200
+  Time (days) =  1.39000E+01  Delt (days) = 1.000E-01
+  Number of Newton iterations =  3
+  Maximum change in master variable =   2.88E-05   at grid pts  121    1    1
+ 
+  Adjusting time step to match output file
+  ---> New time step =  2.7860E-14
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  1.500E+01
+   File number  =            7
+ 
+ Time step #          300
+  Time (days) =  1.98225E+01  Delt (days) = 1.000E-01
+  Number of Newton iterations =  3
+  Maximum change in master variable =   8.77E-06   at grid pts  121    1    1
+ 
+  Adjusting time step to match output file
+  ---> New time step =  7.7472E-02
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  2.000E+01
+   File number  =            8
+ 
+  Adjusting time step to match output file
+  ---> New time step =  1.0000E-01
+ 
+ 
+   WRITING OUTPUT FILES
+  Time (days) =  2.500E+01
+   File number  =            9
+ 
+ 
+  Total Newton iterations =          897
+ 
+   *** RUN SUCCESSFULLY COMPLETED *** 
+ 
+ 
+ 
+ ====== Running time on this computer ======
+ 
+     hr:   0    min:   0    sec:   6
+
