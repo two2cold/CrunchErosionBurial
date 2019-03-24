@@ -543,7 +543,7 @@ DO k = 1,nkin
 
 !!    Associate mineral with another mineral (surface area and volume fraction)
       IF (MineralAssociate(k)) THEN
-
+        
         IF (MineralID(k) < k) THEN                  !!  NOTE: This requires that the mineral that is associated with is earlier in list
           surf(np,k) = surf(np,MineralID(k))
         ELSE
@@ -556,7 +556,7 @@ DO k = 1,nkin
         IF (SetSurfaceAreaConstant) THEN
           surf(np,k) = areain(k,jinit(jx,jy,jz))*porfactor
         ELSE
-          surf(np,k) = area(k,jx,jy,jz)*porfactor            
+          surf(np,k) = area(k,jx,jy,jz)*porfactor           
         END IF
 
         surf(np,k) = areain(k,jinit(jx,jy,jz))*porfactor
@@ -642,7 +642,6 @@ DO k = 1,nkin
           
 !!    TST, irreversible, or PrecipitationOnly
       IF (imintype(np,k) == 1 .OR. imintype(np,k) == 3 .OR. imintype(np,k) == 4 .OR. imintype(np,k) == 5 .OR. imintype(np,k) == 10 ) THEN 
-        
         term2 = 0.0D0
         DO kk = 1,ndepend(np,k)
           i = idepend(kk,np,k)
@@ -927,7 +926,6 @@ DO k = 1,nkin
 !!!        Anucleation = 0.001
         
         IF (si(np,k) > 1.0) THEN
-            
           BtimesSigma = Bnucleation(np,k)*SigmaNucleation(np,k)*SigmaNucleation(np,k)*SigmaNucleation(np,k)
           AffinityTerm = Azero25C(np,k)*DEXP(-BtimesSigma/( siln(np,k)*siln(np,k) ) )
           rate0(np,k) = 1.0d0
@@ -1086,8 +1084,8 @@ DO k = 1,nkin
           END IF
 
         END IF
-        
         rmin(np,k) = MoleFractionMineral*surf(np,k)*rate0(np,k)*actenergy(np,k)*pre_rmin(np,k)*AffinityTerm
+!!        rmin(np,k) = MoleFractionMineral*area(k,jx,jy,jz)*rate0(np,k)*actenergy(np,k)*pre_rmin(np,k)*AffinityTerm  ! Yuchen makes changes 03/13/2019 for mineral burial potentially not stable
         if (imintype(np,k) == 10 .and. si(np,k) > 1.0) then
             continue
         end if
@@ -1097,7 +1095,6 @@ DO k = 1,nkin
     END IF
 
     dppt(k,jx,jy,jz) = dppt(k,jx,jy,jz) + rmin(np,k)
-
   
   END DO   !  End of npth parallel reaction
   
